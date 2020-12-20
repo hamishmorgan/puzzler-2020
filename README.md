@@ -4,7 +4,7 @@
 
 Find words by connecting letters
 
-!(puzzle.png)
+![puzzle.png](https://github.com/hamishmorgan/puzzler-2020/blob/main/puzzle.png?raw=true)
 
 Rules:
 
