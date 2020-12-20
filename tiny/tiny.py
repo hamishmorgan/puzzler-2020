@@ -1,1 +1,3 @@
-print("\n".join(w for G in['whsyonsorblegohgcotnytloerchswnybtbowgcerl']for w in{l.strip().lower()for l in open('/usr/share/dict/words')}if w[0]in G and all(p+q in G+G[-2::-1]for p,q in zip(w,w[1:]))))
+import sys
+G='whsyonsorblegohgcotnytloerchswnybtbowgcerl'
+[print(w) for w in{l.strip().lower()for l in open(sys.argv[1])}if w[0]in G and all(p+q in G+G[-2::-1]for p,q in zip(w,w[1:]))]
