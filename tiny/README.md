@@ -7,11 +7,11 @@ Rules I've adopted:
  - semi-colons count as new-lines
  - The dictionary must be passed as a program argument
 
-At time of writing it is 3 lines and 164 characters.
+At time of writing it is 3 lines and 158 characters.
 
 ```shell
 wc -c tiny.py
-     164 tiny.py
+     158 tiny.py
     
 time python3 tiny.py | wc -l
      804
@@ -39,8 +39,8 @@ The best graph representation I've found is 42 characters long, which I _believe
 
 ## One line variation
 
-There's a single line version which is a bit longer at 206 characters. This employs a couple of extra tricks: 
+There's a single line version which is a bit longer at 181 characters. This employs a couple of extra tricks: 
 
  - Drop the `import sys` line by replacing `sys.argv[1]` with `__builtins__.__import__('sys').argv[1]`.
- - Embed the graph variable as an aggregation of one thing.
+ - Embed the graph variable as a single item aggregation.
 
