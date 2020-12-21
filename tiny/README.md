@@ -7,14 +7,14 @@ Rules I've adopted:
  - semi-colons count as new-lines
  - The dictionary must be passed as a program argument
 
-At time of writing it is 3 lines and 184 characters.
+At time of writing it is 3 lines and 164 characters.
 
 ```shell
 wc -c tiny.py
-     184 tiny.py
+     164 tiny.py
     
-time python tiny.py /usr/share/dict/words | wc -l
-     439
+time python3 tiny.py | wc -l
+     804
 python tiny.py  0.55s user 0.04s system 98% cpu 0.600 total
 ```
 
@@ -28,13 +28,14 @@ One such compressed representation is as follows:
 whsyonsorblegohgcotnytloerchswnybtbowgcerl
 ```
 
-The best graph representation I've found is 42 characters long, which I _believe_ this is the theoretical limit. The theoretical limit for _any_ graph with 36 edges would be 1 start vertex + 36 traversals = 37 characters. However, this would require a single walk traversing all edges - the "Eulerian trail". That's not possible in this case because the graph contains 12 verticies with excess (odd) out-degree, which must be start or end states for a walk. Since excess degree can be start _or_ end states we can cover two per walk. Thus, 36 edges + 12/2 start states  = 42.
+The best graph representation I've found is 42 characters long, which I _believe_ is the theoretical limit. The theoretical limit for _any_ graph with 36 edges would be 1 start vertex + 36 traversals = 37 characters. However, this would require a single walk traversing all edges - the "Eulerian trail". That's not possible in this case because the graph contains 12 verticies with excess (odd) out-degree, which must be start or end states for a walk. Since excess degree can be start _or_ end states we can cover two per walk. Thus, 36 edges + 12/2 start states  = 42.
 
 ## Other ticks
 
  - `for p,q in zip(w,w[1:])` to generate all sequential pairs. Not that you don't have to shorten the argument because zip automatically take the min length.
  - `G+G[-2::-1]` so edges match in both directions.
  - I plagiarised `[print(w) for w in ...]` from JohnM's version. Before I had `print("\n".join(w for w in ...))` so I owe fully 9 characters to John's ingenuity.
+ - Skipped `strip()`ing out newlines by slicing the words `w[1:-1]` (thanks Chris!)
 
 ## One line variation
 
