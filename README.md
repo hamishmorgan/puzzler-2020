@@ -24,3 +24,4 @@ Invalid examples: `blobby` (doubled `b`), `shout` (no `u`), `ghost` (`s` not con
 
  - `simple` is a fairly straightforward implementation
  - `tiny` is an attempted at smallest Python implementation
+ - `slow` is all about being as well-meaningly ineffective as possible  
